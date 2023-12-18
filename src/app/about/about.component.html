@@ -1,0 +1,24 @@
+<div *ngIf="EmpList.length>0; else listeVide">
+<h1>la liste des employes!</h1>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Eamil</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let empl of EmpList;">
+    <td>{{empl.id}}</td>
+    <td>{{empl.nom | uppercase}}</td>
+    <td>{{empl.prenom | uppercase}}</td>
+    <td>{{empl.email}}</td>
+  </tr>
+  </tbody>
+</table>
+  <button (click)="deletAll()">supprimer tout</button>
+</div>
+
+
+<ng-template #listeVide><p>La liste des employes est vide !</p></ng-template>
+
